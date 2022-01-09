@@ -5,6 +5,8 @@ import Device from "./Device";
 import Subjects from "./Subjects";
 import MobileNumber from "./MobileNumber";
 import Country from "./Country";
+import State from "./State";
+import City from "./City";
 
 export default function Form() {
   const [data, setData] = React.useState({
@@ -17,6 +19,7 @@ export default function Form() {
     city: "",
     preferredLanguage: "",
     countryCode: "",
+    stateCode: "",
   });
 
   const setValue = (key, value) =>
@@ -41,6 +44,17 @@ export default function Form() {
         value={data.country}
         setValue={setValue}
         countryCode={data.countryCode}
+      />
+      <State
+        countryCode={data.countryCode}
+        value={data.state}
+        setValue={setValue}
+      />
+      <City
+        countryCode={data.countryCode}
+        stateCode={data.stateCode}
+        value={data.city}
+        setValue={setValue}
       />
     </>
   );

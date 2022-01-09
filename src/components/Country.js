@@ -44,7 +44,7 @@ export default function CountryComponent({ value, setValue, countryCode }) {
         <Grid item xs={6}>
           <Box sx={{ minWidth: 120 }}>
             <FormControl>
-              <Select value={value} label="Country" onChange={handleChange}>
+              <Select value={value} onChange={handleChange}>
                 {COUNTRIES.map((name) => (
                   <MenuItem key={name} value={name}>
                     {name}
