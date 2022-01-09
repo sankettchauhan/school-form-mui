@@ -1,5 +1,6 @@
 import { Button, Typography } from "@mui/material";
 import React from "react";
+import Class from "./Class";
 import Device from "./Device";
 import MobileNumber from "./MobileNumber";
 
@@ -27,6 +28,7 @@ export default function Form() {
       <Button variant="contained">Professional Courses</Button>
       <MobileNumber value={data.mobileNo} setValue={setValue} />
       <Device value={data.device} setValue={setValue} />
+      <Class value={data.class} setValue={setValue} />
     </>
   );
 }
