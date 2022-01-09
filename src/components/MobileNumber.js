@@ -18,7 +18,7 @@ export default function MobileNumber({ value, setValue }) {
     <Box sx={{ display: "flex", justifyContent: "center" }}>
       <PhoneInput
         placeholder="Enter phone number"
-        onCountryChange={(country) => setValue("country", country)}
+        onCountryChange={(countryCode) => setValue("countryCode", countryCode)}
         countrySelectProps={{ unicodeFlags: true }}
         onChange={(value) => setValue("mobileNo", value)}
         className={classes.phoneInput}

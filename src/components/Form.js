@@ -4,6 +4,7 @@ import Class from "./Class";
 import Device from "./Device";
 import Subjects from "./Subjects";
 import MobileNumber from "./MobileNumber";
+import Country from "./Country";
 
 export default function Form() {
   const [data, setData] = React.useState({
@@ -15,6 +16,7 @@ export default function Form() {
     state: "",
     city: "",
     preferredLanguage: "",
+    countryCode: "",
   });
 
   const setValue = (key, value) =>
@@ -31,6 +33,11 @@ export default function Form() {
       <Device value={data.device} setValue={setValue} />
       <Class value={data.class} setValue={setValue} />
       <Subjects value={data.subjects} setValue={setValue} />
+      <Country
+        value={data.country}
+        setValue={setValue}
+        countryCode={data.countryCode}
+      />
     </>
   );
 }
