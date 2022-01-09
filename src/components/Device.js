@@ -1,11 +1,5 @@
 import {
-  Radio,
-  FormControl,
-  FormControlLabel,
   FormLabel,
-  RadioGroup,
-  Typography,
-  Button,
   ToggleButtonGroup,
   ToggleButton,
   Grid,
@@ -14,21 +8,32 @@ import React from "react";
 
 export default function Device({ value, setValue }) {
   const ENUM = ["PC/Laptop", "Mobile"];
+  const handleClick = (device) => setValue("device", device);
   return (
     <>
       <Grid container>
-        <Grid item xs={6} style={{ textAlign: "right", paddingRight: 20 }}>
-          <FormLabel component="legend" style={{ fontSize: "2em" }}>
+        <Grid
+          item
+          xs={6}
+          style={{
+            paddingRight: 20,
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "flex-end",
+          }}
+        >
+          <FormLabel component="legend" style={{ fontSize: "1em" }}>
             Device you will use for Demo Class
           </FormLabel>
         </Grid>
-        <Grid xs={6}>
+        <Grid item xs={6}>
           <ToggleButtonGroup>
             {ENUM.map((item, index) => (
               <ToggleButton
                 key={`${item}-${index + 1}`}
                 value={item}
-                control={<Button varianr="contained" />}
+                onClick={() => handleClick(item)}
+                selected={value === item}
               >
                 {item}
               </ToggleButton>
