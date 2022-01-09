@@ -29,7 +29,11 @@ export default function Form() {
       <Typography variant="h4">Book a free demo</Typography>
       <Button variant="contained">School Courses</Button>
       <Button variant="contained">Professional Courses</Button>
-      <MobileNumber value={data.mobileNo} setValue={setValue} />
+      <MobileNumber
+        country={data.country}
+        value={data.mobileNo}
+        setValue={setValue}
+      />
       <Device value={data.device} setValue={setValue} />
       <Class value={data.class} setValue={setValue} />
       <Subjects value={data.subjects} setValue={setValue} />

@@ -1,7 +1,8 @@
 import { TextField } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import { Box } from "@mui/system";
-import React, { useState } from "react";
+import { Country } from "country-state-city";
+import React, { useEffect, useState } from "react";
 import PhoneInput from "react-phone-number-input";
 import "react-phone-number-input/style.css";
 
@@ -11,8 +12,16 @@ const useStyles = makeStyles({
   },
 });
 
-export default function MobileNumber({ value, setValue }) {
+export default function MobileNumber({ country, value, setValue }) {
   const classes = useStyles();
+  useEffect(() => {
+    if (country) {
+      const countryCode = Country.getAllCountries().filter(
+        (c) => c.name === country
+      )[0].isoCode;
+      setValue("countryCode", countryCode);
+    }
+  }, [country]);
 
   return (
     <Box sx={{ display: "flex", justifyContent: "center" }}>

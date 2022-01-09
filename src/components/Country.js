@@ -12,16 +12,17 @@ import { Country } from "country-state-city";
 import { Box } from "@mui/system";
 
 export default function CountryComponent({ value, setValue, countryCode }) {
+  const COUNTRIES = Country.getAllCountries().map((country) => country.name);
+
   useEffect(() => {
     if (countryCode)
       setValue("country", Country.getCountryByCode(countryCode).name);
   }, [countryCode]);
 
   const handleChange = (event) => {
-    setValue("country", event.target.value);
+    const countryName = event.target.value;
+    setValue("country", countryName);
   };
-
-  const COUNTRIES = Country.getAllCountries().map((country) => country.name);
 
   return (
     <>
@@ -44,9 +45,9 @@ export default function CountryComponent({ value, setValue, countryCode }) {
           <Box sx={{ minWidth: 120 }}>
             <FormControl>
               <Select value={value} label="Country" onChange={handleChange}>
-                {COUNTRIES.map((country) => (
-                  <MenuItem key={country} value={country}>
-                    {country}
+                {COUNTRIES.map((name) => (
+                  <MenuItem key={name} value={name}>
+                    {name}
                   </MenuItem>
                 ))}
               </Select>
