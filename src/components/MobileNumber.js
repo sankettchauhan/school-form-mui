@@ -11,21 +11,16 @@ const useStyles = makeStyles({
   },
 });
 
-export default function MobileNumber() {
+export default function MobileNumber({ value, setValue }) {
   const classes = useStyles();
-  const [value, setValue] = useState();
-  const [country, setCountry] = useState("");
 
-  console.log(value);
-  console.log(country);
   return (
     <Box sx={{ display: "flex", justifyContent: "center" }}>
       <PhoneInput
         placeholder="Enter phone number"
-        onCountryChange={(country) => setCountry(country)}
+        onCountryChange={(country) => setValue("country", country)}
         countrySelectProps={{ unicodeFlags: true }}
-        defaultCountry="IN"
-        onChange={setValue}
+        onChange={(value) => setValue("mobileNo", value)}
         className={classes.phoneInput}
       />
     </Box>

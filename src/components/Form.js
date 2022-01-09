@@ -3,12 +3,28 @@ import React from "react";
 import MobileNumber from "./MobileNumber";
 
 export default function Form() {
+  const [data, setData] = React.useState({
+    mobileNo: "",
+    device: "",
+    class: "",
+    subjects: [],
+    country: "",
+    state: "",
+    city: "",
+    preferredLanguage: "",
+  });
+
+  const setValue = (key, value) =>
+    setData((state) => ({ ...state, [key]: value }));
+
+  console.log(data);
+
   return (
     <>
       <Typography variant="h4">Book a free demo</Typography>
       <Button variant="contained">School Courses</Button>
       <Button variant="contained">Professional Courses</Button>
-      <MobileNumber />
+      <MobileNumber value={data.mobileNo} setValue={setValue} />
     </>
   );
 }
