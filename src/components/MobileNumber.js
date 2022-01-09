@@ -1,10 +1,18 @@
 import { TextField } from "@mui/material";
+import { makeStyles } from "@mui/styles";
 import { Box } from "@mui/system";
 import React, { useState } from "react";
 import PhoneInput from "react-phone-number-input";
 import "react-phone-number-input/style.css";
 
+const useStyles = makeStyles({
+  phoneInput: {
+    textAlign: "center",
+  },
+});
+
 export default function MobileNumber() {
+  const classes = useStyles();
   const [value, setValue] = useState();
   const [country, setCountry] = useState("");
 
@@ -18,6 +26,7 @@ export default function MobileNumber() {
         countrySelectProps={{ unicodeFlags: true }}
         defaultCountry="IN"
         onChange={setValue}
+        className={classes.phoneInput}
       />
     </Box>
   );
