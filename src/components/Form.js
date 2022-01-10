@@ -56,6 +56,9 @@ export default function Form() {
         value={data.city}
         setValue={setValue}
       />
+      <Button variant="contained" type="submit" color="primary">
+        Submit
+      </Button>
     </>
   );
 }
