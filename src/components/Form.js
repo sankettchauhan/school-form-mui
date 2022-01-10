@@ -7,6 +7,7 @@ import MobileNumber from "./MobileNumber";
 import Country from "./Country";
 import State from "./State";
 import City from "./City";
+import { createForm } from "../axios/forms";
 
 export default function Form() {
   const [data, setData] = React.useState({
@@ -26,6 +27,16 @@ export default function Form() {
     setData((state) => ({ ...state, [key]: value }));
 
   console.log(data);
+
+  const handleClick = async () => {
+    try {
+      const dataFromDb = await createForm(data);
+      console.log(dataFromDb);
+    } catch (error) {
+      console.log(`An error occured.`);
+      console.log(error.response);
+    }
+  };
 
   return (
     <>
@@ -56,7 +67,7 @@ export default function Form() {
         value={data.city}
         setValue={setValue}
       />
-      <Button variant="contained" type="submit" color="primary">
+      <Button variant="contained" onClick={handleClick} color="primary">
         Submit
       </Button>
     </>
