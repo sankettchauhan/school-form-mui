@@ -29,7 +29,7 @@ export default function MobileNumber({ country, value, setValue }) {
       <Grid container>
         <Grid
           item
-          xs={6}
+          xs={5}
           style={{
             paddingRight: 20,
             display: "flex",
@@ -41,7 +41,7 @@ export default function MobileNumber({ country, value, setValue }) {
             Select country and enter mobile number
           </FormLabel>
         </Grid>
-        <Grid item xs={6}>
+        <Grid item xs={7}>
           <PhoneInput
             placeholder="Enter phone number"
             onCountryChange={(countryCode) =>

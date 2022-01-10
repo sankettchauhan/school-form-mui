@@ -28,7 +28,7 @@ export default function Class({ value, setValue }) {
       <Grid container>
         <Grid
           item
-          xs={6}
+          xs={5}
           style={{
             paddingRight: 20,
             display: "flex",
@@ -40,7 +40,7 @@ export default function Class({ value, setValue }) {
             Class/Grade
           </FormLabel>
         </Grid>
-        <Grid item xs={6}>
+        <Grid item xs={7}>
           <ToggleButtonGroup>
             {ENUM.map((item, index) => (
               <ToggleButton

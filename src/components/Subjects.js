@@ -24,7 +24,7 @@ export default function Subjects({ value, setValue }) {
       <Grid container>
         <Grid
           item
-          xs={6}
+          xs={5}
           style={{
             paddingRight: 20,
             display: "flex",
@@ -36,8 +36,8 @@ export default function Subjects({ value, setValue }) {
             Subject/s
           </FormLabel>
         </Grid>
-        <Grid item xs={6}>
-          <FormControl sx={{ m: 1, width: 300 }}>
+        <Grid item xs={7}>
+          <FormControl sx={{ width: 300 }}>
             <InputLabel>Subject/s</InputLabel>
             <Select
               multiple

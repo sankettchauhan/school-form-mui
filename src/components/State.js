@@ -28,7 +28,7 @@ export default function StateComponent({ countryCode, value, setValue }) {
     <Grid container>
       <Grid
         item
-        xs={6}
+        xs={5}
         style={{
           paddingRight: 20,
           display: "flex",
@@ -40,7 +40,7 @@ export default function StateComponent({ countryCode, value, setValue }) {
           State
         </FormLabel>
       </Grid>
-      <Grid item xs={6}>
+      <Grid item xs={7}>
         <Box sx={{ minWidth: 120 }}>
           <FormControl>
             <Select value={value} onChange={handleChange} placeholder="State">

@@ -29,7 +29,7 @@ export default function CountryComponent({ value, setValue, countryCode }) {
       <Grid container>
         <Grid
           item
-          xs={6}
+          xs={5}
           style={{
             paddingRight: 20,
             display: "flex",
@@ -41,7 +41,7 @@ export default function CountryComponent({ value, setValue, countryCode }) {
             Country
           </FormLabel>
         </Grid>
-        <Grid item xs={6}>
+        <Grid item xs={7}>
           <Box sx={{ minWidth: 120 }}>
             <FormControl>
               <Select value={value} onChange={handleChange}>

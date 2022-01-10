@@ -9,6 +9,15 @@ import State from "./State";
 import City from "./City";
 import { createForm } from "../axios/forms";
 import Language from "./Language";
+import { Box } from "@mui/system";
+import { makeStyles } from "@mui/styles";
+
+const useStyles = makeStyles({
+  formgroup: {
+    marginTop: "0.5em",
+    width: "100%",
+  },
+});
 
 export default function Form() {
   const DEFAULT_FORM_STATE = {
@@ -23,6 +32,7 @@ export default function Form() {
     countryCode: "",
     stateCode: "",
   };
+  const classes = useStyles();
   const [data, setData] = React.useState(DEFAULT_FORM_STATE);
 
   const setValue = (key, value) =>
@@ -46,36 +56,55 @@ export default function Form() {
   return (
     <>
       <Typography variant="h4">Book a free demo</Typography>
-      <Button variant="contained">School Courses</Button>
-      <Button variant="contained">Professional Courses</Button>
-      <MobileNumber
-        country={data.country}
-        value={data.mobileNo}
-        setValue={setValue}
-      />
-      <Device value={data.device} setValue={setValue} />
-      <Class value={data.class} setValue={setValue} />
-      <Subjects value={data.subjects} setValue={setValue} />
-      <Country
-        value={data.country}
-        setValue={setValue}
-        countryCode={data.countryCode}
-      />
-      <State
-        countryCode={data.countryCode}
-        value={data.state}
-        setValue={setValue}
-      />
-      <City
-        countryCode={data.countryCode}
-        stateCode={data.stateCode}
-        value={data.city}
-        setValue={setValue}
-      />
-      <Language value={data.preferredLanguage} setValue={setValue} />
-      <Button variant="contained" onClick={handleClick} color="primary">
-        Submit
-      </Button>
+      <Box>
+        <Button variant="contained">School Courses</Button>
+      </Box>
+      <Box className={classes.formgroup}>
+        <MobileNumber
+          country={data.country}
+          value={data.mobileNo}
+          setValue={setValue}
+        />
+      </Box>
+      <Box className={classes.formgroup}>
+        <Device value={data.device} setValue={setValue} />
+      </Box>
+      <Box className={classes.formgroup}>
+        <Class value={data.class} setValue={setValue} />
+      </Box>
+      <Box className={classes.formgroup}>
+        <Subjects value={data.subjects} setValue={setValue} />
+      </Box>
+      <Box className={classes.formgroup}>
+        <Country
+          value={data.country}
+          setValue={setValue}
+          countryCode={data.countryCode}
+        />
+      </Box>
+      <Box className={classes.formgroup}>
+        <State
+          countryCode={data.countryCode}
+          value={data.state}
+          setValue={setValue}
+        />
+      </Box>
+      <Box className={classes.formgroup}>
+        <City
+          countryCode={data.countryCode}
+          stateCode={data.stateCode}
+          value={data.city}
+          setValue={setValue}
+        />
+      </Box>
+      <Box className={classes.formgroup}>
+        <Language value={data.preferredLanguage} setValue={setValue} />
+      </Box>
+      <Box sx={{ marginTop: "0.5em" }}>
+        <Button variant="contained" onClick={handleClick} color="primary">
+          Submit
+        </Button>
+      </Box>
     </>
   );
 }
