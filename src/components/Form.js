@@ -55,9 +55,11 @@ export default function Form() {
 
   return (
     <>
-      <Typography variant="h4">Book a free demo</Typography>
+      <Typography variant="h4" style={{ textTransform: "uppercase" }}>
+        Book a free demo
+      </Typography>
       <Box>
-        <Button variant="contained">School Courses</Button>
+        <Typography variant="h5">School Courses</Typography>
       </Box>
       <Box className={classes.formgroup}>
         <MobileNumber
